@@ -397,7 +397,7 @@
           <span class="link-value">@Sebvietsky</span>
         </a>
         <a
-          href="https://www.linkedin.com/in/sebastien-fabie/"
+          href="https://www.linkedin.com/in/sebastienfabie/"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-link"
