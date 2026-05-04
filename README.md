@@ -1,42 +1,82 @@
-# sv
+# Portfolio personnel
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Code source de mon site portfolio. Construit avec SvelteKit, déployé automatiquement sur GitHub Pages via GitHub Actions à chaque push sur `main`.
 
-## Creating a project
+🌐 **Site en ligne :** [sebvietsky.github.io](https://sebvietsky.github.io)
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Stack
 
-To recreate this project with the same configuration:
+- **SvelteKit** (mode statique, adapter `@sveltejs/adapter-static`)
+- **TypeScript**
+- **CSS pur** avec variables custom — pas de framework UI
+- **Google Fonts** (Fraunces, Manrope, JetBrains Mono)
+- **GitHub Actions** pour le déploiement continu
+- **GitHub Pages** pour l'hébergement
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.2 create --template minimal --types ts --install pnpm sebvietsky-portfolio
-```
+Aucune dépendance JavaScript runtime côté client : le site est entièrement pré-rendu au build, ce qui le rend rapide et sans dépendance à un serveur Node.
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Lancer en local
 
-```sh
+Prérequis : Node.js 20+ et npm.
+
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Le site est servi sur `http://localhost:5173` avec hot-reload.
 
-To create a production version of your app:
+---
 
-```sh
-npm run build
+## Build et déploiement
+
+```bash
+npm run build      # génère le dossier build/
+npm run preview    # sert le build en local pour vérification
 ```
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Structure du projet
+
+```
+.
+├── src/
+│   ├── app.css                # design tokens, reset, utilitaires, animations
+│   ├── app.html               # template HTML, meta SEO et Open Graph
+│   └── routes/
+│       ├── +layout.svelte     # nav, footer, animations globales (scroll, reveal)
+│       ├── +layout.ts         # active le prerendering pour tout le site
+│       └── +page.svelte       # contenu du portfolio (sections + styles)
+├── static/                    # assets servis tels quels (favicons, OG, CV)
+│   ├── favicon.svg
+│   ├── favicon-32.png
+│   ├── apple-touch-icon.png
+│   ├── og-image.png
+│   └── cv-sebastien-fabie.pdf
+├── .github/workflows/
+│   └── deploy.yml             # CI/CD vers GitHub Pages
+└── svelte.config.js           # configuration de l'adapter static
+```
+
+---
+
+## Choix techniques
+
+Quelques décisions notables, pour celles et ceux qui se demanderaient pourquoi tel ou tel choix :
+
+- **SvelteKit plutôt que du HTML pur** : cohérence avec ma stack (j'utilise Svelte sur d'autres projets), single source of truth pour le routing, et adapter static qui produit un site équivalent à du HTML pur côté performance.
+- **Pas de framework CSS** : le portfolio est suffisamment petit pour que Tailwind soit un overkill. Les variables CSS et un peu de discipline suffisent largement.
+- **Animations en CSS pur + IntersectionObserver** : pas de bibliothèque d'animation. Tout tient en ~100 lignes de CSS et ~30 lignes de JS, et c'est plus performant que GSAP ou Motion sur ce volume.
+
+---
+
+## Licence
+
+Le **code** est distribué sous licence MIT — n'hésite pas à t'en inspirer pour ton propre portfolio.
+
+Le **contenu** (textes, biographie, expériences professionnelles, projets, photos) reste personnel et ne peut être réutilisé.
