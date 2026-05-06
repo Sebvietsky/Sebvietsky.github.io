@@ -106,7 +106,7 @@
   }
 
   header.scrolled {
-    background: rgba(13, 12, 10, 0.85);
+    background: rgba(250, 250, 247, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 0.85rem 0;
@@ -135,7 +135,7 @@
     width: 2.25rem;
     height: 2.25rem;
     background: var(--accent);
-    color: var(--bg);
+    color: #fff;
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.85rem;
@@ -173,14 +173,14 @@
   nav a.cta {
     padding: 0.55rem 1.1rem;
     background: var(--accent);
-    color: var(--bg);
+    color: #fff;
     border-radius: 999px;
     font-weight: 600;
   }
 
   nav a.cta:hover {
     background: var(--accent-soft);
-    color: var(--bg);
+    color: #fff;
   }
 
   @media (max-width: 640px) {

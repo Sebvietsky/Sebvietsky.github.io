@@ -397,7 +397,7 @@
           <span class="link-value">@Sebvietsky</span>
         </a>
         <a
-          href="https://www.linkedin.com/in/sebastienfabie/"
+          href="https://www.linkedin.com/in/sebastien-fabie/"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-link"
@@ -530,7 +530,7 @@
 
   .btn-primary {
     background: var(--accent);
-    color: var(--bg);
+    color: #fff;
   }
 
   .btn-primary:hover {
@@ -545,7 +545,7 @@
 
   .btn-ghost:hover {
     border-color: var(--fg);
-    background: var(--bg-elev);
+    background: var(--bg-card);
   }
 
   .btn-cv {
@@ -578,13 +578,13 @@
   }
 
   .hero-card {
-    background: var(--bg-card);
+    background: var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.75rem;
     font-size: 0.92rem;
     transform: rotate(0.8deg);
-    box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 18px 50px -22px rgba(60, 50, 35, 0.2);
   }
 
   .card-row {
@@ -702,12 +702,14 @@
     padding: 1.5rem;
     transition:
       border-color 0.3s ease,
-      transform 0.3s ease;
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .stack-block:hover {
     border-color: var(--border-strong);
     transform: translateY(-2px);
+    box-shadow: 0 12px 30px -18px rgba(60, 50, 35, 0.15);
   }
 
   .stack-block h3 {
@@ -760,18 +762,21 @@
     position: relative;
     transition:
       border-color 0.3s ease,
-      transform 0.3s ease;
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .project:not(.locked):hover {
     border-color: var(--border-strong);
     transform: translateY(-3px);
+    box-shadow: 0 18px 40px -22px rgba(60, 50, 35, 0.2);
   }
 
   /* Variante "projet en cours" */
   .project.locked {
     opacity: 0.78;
     border-style: dashed;
+    background: var(--bg-card);
   }
 
   .project.locked .project-num {
@@ -790,8 +795,8 @@
     font-family: var(--font-mono);
     font-size: 0.72rem;
     font-weight: 500;
-    color: var(--accent-soft);
-    background: var(--bg-card);
+    color: var(--accent);
+    background: var(--bg);
     border: 1px solid var(--border-strong);
     border-radius: 999px;
     letter-spacing: 0.02em;
@@ -841,7 +846,7 @@
     font-size: 0.78rem;
     color: var(--fg);
     background: var(--bg-card);
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
     padding: 0.35rem 0.8rem;
     border-radius: 4px;
   }
@@ -1004,6 +1009,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 24px 60px -28px rgba(60, 50, 35, 0.25);
   }
 
   .contact-card::before {
@@ -1046,7 +1052,7 @@
     flex-direction: column;
     gap: 0.35rem;
     padding: 1.1rem 1.25rem;
-    background: var(--bg-card);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
     transition: all 0.25s ease;
@@ -1059,7 +1065,7 @@
 
   .contact-link.primary {
     border-color: var(--accent);
-    background: linear-gradient(135deg, var(--bg-card), var(--accent-glow));
+    background: linear-gradient(135deg, var(--bg), var(--accent-glow));
   }
 
   .link-label {

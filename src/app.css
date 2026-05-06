@@ -1,21 +1,21 @@
 /* =========================================================================
-   Design tokens
+   Design tokens — Light mode éditorial
    ========================================================================= */
 :root {
-  /* Colors — palette alpine au coucher du soleil */
-  --bg: #0d0c0a;
-  --bg-elev: #15140f;
-  --bg-card: #1a1813;
-  --border: #2a261e;
-  --border-strong: #3d362a;
+  /* Colors — palette papier / terre cuite / encre */
+  --bg: #fafaf7;
+  --bg-elev: #ffffff;
+  --bg-card: #f4f1ea;
+  --border: #e6e1d4;
+  --border-strong: #d4ccb8;
 
-  --fg: #f5f1e8;
-  --fg-muted: #a8a195;
-  --fg-faded: #6b6557;
+  --fg: #1a1815;
+  --fg-muted: #5d564a;
+  --fg-faded: #8a8273;
 
-  --accent: #d96332;
-  --accent-soft: #f4a368;
-  --accent-glow: rgba(217, 99, 50, 0.15);
+  --accent: #c54f1f;
+  --accent-soft: #d96332;
+  --accent-glow: rgba(197, 79, 31, 0.1);
 
   /* Typography */
   --font-display: "Fraunces", Georgia, serif;
@@ -54,7 +54,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Topographic background pattern */
+/* Topographic background pattern — adapté au light mode */
 body::before {
   content: "";
   position: fixed;
@@ -63,7 +63,7 @@ body::before {
     radial-gradient(circle at 15% 20%, var(--accent-glow) 0%, transparent 35%),
     radial-gradient(
       circle at 85% 80%,
-      rgba(120, 80, 50, 0.08) 0%,
+      rgba(180, 140, 100, 0.06) 0%,
       transparent 40%
     );
   pointer-events: none;
