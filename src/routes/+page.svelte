@@ -5,6 +5,7 @@
     "PostgreSQL",
     "Express / NestJS",
     "Docker",
+    "React"
   ];
 
   type Project = {
@@ -81,7 +82,7 @@
     },
   ];
 
-  const email = "sebastien.fabie@gmail.com";
+  const email = "sebastienfabie@gmail.com";
 </script>
 
 <!-- ============================ HERO ============================ -->
@@ -96,16 +97,16 @@
     <div class="hero-content">
       <div class="whoami">
         <p class="prompt"><span class="dollar">$</span> whoami</p>
-        <p class="identity">Sébastien Fabié — développeur web backend</p>
+        <p class="identity">Sébastien Fabié - développeur web fullstack (appétence forte au backend)</p>
         <p>
           <span class="badge-available"
-            >● Disponible — CDI ou missions freelance · Annecy / à distance</span
+            >● Disponible - CDI ou missions freelance · Annecy / à distance</span
           >
         </p>
       </div>
 
       <h1>
-        Des sites et des API<br />solides, pensés<br />pour durer<span
+        Des sites et des API<br />solides, pensés<br />pour durer et grandir<span
           class="caret">_</span
         >
       </h1>
@@ -141,8 +142,7 @@
       </div>
 
       <p class="note">
-        # Avant le code : 4 ans de conseil technique outdoor. La même rigueur du
-        détail, appliquée à vos projets.
+        # J'apprends en continu et peux étendre ma stack pour répondre à vos besoins.
       </p>
     </div>
   </div>
@@ -207,7 +207,6 @@
       <h2>Parcours</h2>
       <span class="cmd">$ git log --date=short</span>
     </div>
-    <p class="section-sub reveal">Du retail outdoor au code backend.</p>
 
     <div class="timeline stagger">
       {#each experiences as exp, i}
@@ -240,7 +239,7 @@
 
     <p class="contact-lede reveal">
       CDI ou mission freelance, à Annecy ou à distance. Décrivez-moi votre
-      besoin en quelques lignes — réponse sous 48h.
+      besoin en quelques lignes.
     </p>
 
     <div class="actions stagger">
@@ -270,7 +269,7 @@
 
     <footer class="term-footer">
       <span class="ok">[portfolio]</span>
-      <span>Sébastien Fabié — Annecy · 2026</span>
+      <span>Sébastien Fabié - Annecy · 2026</span>
       <a
         href="https://github.com/Sebvietsky/Sebvietsky.github.io"
         target="_blank"
