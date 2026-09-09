@@ -97,7 +97,7 @@
     <div class="hero-content">
       <div class="whoami">
         <p class="prompt"><span class="dollar">$</span> whoami</p>
-        <p class="identity">Sébastien Fabié - développeur web fullstack (appétence forte au backend)</p>
+        <p class="identity">Sébastien Fabié - développeur fullstack (appétence forte au backend)</p>
         <p>
           <span class="badge-available"
             >● Disponible - CDI ou missions freelance · Annecy / à distance</span
