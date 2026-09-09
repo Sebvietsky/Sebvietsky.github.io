@@ -50,7 +50,7 @@
 
   const experiences = [
     {
-      period: "Nov. 2025 — Juin 2026",
+      period: "Nov. 2025 — Août 2026",
       role: "Concepteur Développeur d'Application Web",
       org: "École O'clock",
       detail: "Formation intensive 798h — Bac +3/4 (Titre Pro niv. 6)",
@@ -61,14 +61,7 @@
       role: "Sales associate & Skiman",
       org: "Salomon",
       detail:
-        "Conseil technique, bootfitting, montage ski. Diplôme Sidas Académie Ski Rouge.",
-      current: false,
-    },
-    {
-      period: "Nov. 2022 — Avril 2023",
-      role: "Conseiller de vente Outdoor",
-      org: "Ekosport",
-      detail: "Spécialité escalade : gestion de stock et réapprovisionnement.",
+        "Conseil technique, bootfitting, montage ski.",
       current: false,
     },
     {
