@@ -1,80 +1,99 @@
 /* =========================================================================
    Design tokens — Light mode (par défaut)
+   Palette « terminal » : papier chaud + violet, mono JetBrains
    ========================================================================= */
 :root,
 :root[data-theme="light"] {
-  /* Colors — palette papier / terre cuite / encre */
-  --bg: #fafaf7;
+  /* Surfaces claires (corps de page) */
+  --bg: #f4f2ee;
   --bg-elev: #ffffff;
-  --bg-card: #f4f1ea;
-  --border: #e6e1d4;
-  --border-strong: #d4ccb8;
+  --bg-panel: #f1efe8;
+  --border: #d0cdc2;
+  --border-soft: #e0dcd3;
+  --border-panel: #e4e1d8;
 
-  --fg: #1a1815;
-  --fg-muted: #5d564a;
-  --fg-faded: #8a8273;
+  /* Texte sur surfaces claires */
+  --fg: #24292e;
+  --fg-muted: #4b5058;
+  --fg-faded: #8a8f98;
 
-  --accent: #c54f1f;
-  --accent-soft: #d96332;
-  --accent-glow: rgba(197, 79, 31, 0.1);
+  /* Accent violet */
+  --accent: #7a3fb0;
+  --accent-hover: #9257c9;
+  --accent-bright: #c39cf0;
+  --accent-tint-bg: #efe6fa;
+  --accent-tint-fg: #7a3fb0;
 
-  /* Background gradients adaptés au light */
-  --bg-glow-1: rgba(197, 79, 31, 0.1);
-  --bg-glow-2: rgba(180, 140, 100, 0.06);
+  /* Ombres */
+  --shadow-card: 0 2px 8px rgba(36, 41, 46, 0.06);
+  --shadow-card-hover: 0 10px 30px -14px rgba(36, 41, 46, 0.28);
 
-  /* Header backdrop */
-  --header-bg: rgba(250, 250, 247, 0.85);
-
-  /* Card shadows */
-  --shadow-card: 0 18px 50px -22px rgba(60, 50, 35, 0.2);
-  --shadow-card-strong: 0 24px 60px -28px rgba(60, 50, 35, 0.25);
-  --shadow-stack-hover: 0 12px 30px -18px rgba(60, 50, 35, 0.15);
-  --shadow-project-hover: 0 18px 40px -22px rgba(60, 50, 35, 0.2);
+  /* Boutons secondaires posés sur fond clair */
+  --ghost-border: var(--border);
+  --ghost-fg: var(--fg);
 }
 
 /* =========================================================================
    Design tokens — Dark mode
+   Le corps de page adopte les teintes du terminal
    ========================================================================= */
 :root[data-theme="dark"] {
-  --bg: #0d0c0a;
-  --bg-elev: #15140f;
-  --bg-card: #1a1813;
-  --border: #2a261e;
-  --border-strong: #3d362a;
+  --bg: #221e2a;
+  --bg-elev: #2f2a3b;
+  --bg-panel: #38324a;
+  --border: #453f55;
+  --border-soft: #3d3849;
+  --border-panel: #453f55;
 
-  --fg: #f5f1e8;
-  --fg-muted: #a8a195;
-  --fg-faded: #6b6557;
+  --fg: #f1eef7;
+  --fg-muted: #c9c3d6;
+  --fg-faded: #948da6;
 
-  --accent: #d96332;
-  --accent-soft: #f4a368;
-  --accent-glow: rgba(217, 99, 50, 0.15);
+  --accent: #c39cf0;
+  --accent-hover: #d9bdf8;
+  --accent-bright: #c39cf0;
+  --accent-tint-bg: #3a2a52;
+  --accent-tint-fg: #e2d3f7;
 
-  --bg-glow-1: rgba(217, 99, 50, 0.15);
-  --bg-glow-2: rgba(120, 80, 50, 0.08);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 14px 34px -16px rgba(0, 0, 0, 0.6);
 
-  --header-bg: rgba(13, 12, 10, 0.85);
-
-  --shadow-card: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
-  --shadow-card-strong: 0 24px 60px -20px rgba(0, 0, 0, 0.5);
-  --shadow-stack-hover: 0 12px 30px -18px rgba(0, 0, 0, 0.3);
-  --shadow-project-hover: 0 18px 40px -22px rgba(0, 0, 0, 0.4);
+  --ghost-border: #4d475c;
+  --ghost-fg: var(--fg);
 }
 
 /* =========================================================================
-   Typography & spacing tokens
+   Tokens partagés — sections « terminal » (nav, hero, contact)
+   Identiques dans les deux thèmes : c'est la signature visuelle du site.
    ========================================================================= */
 :root {
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Manrope", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --term-bg: #2a2633;
+  --term-fg: #f1eef7;
+  --term-muted: #c9c3d6;
+  --term-faded: #8a8399;
+  --term-border: #3d3849;
+  --term-line: #5d5670;
+  --term-ghost-border: #4d475c;
 
-  --max-w: 1200px;
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  /* Badge « disponible » */
+  --ok-bg: #2f4a38;
+  --ok-fg: #8fe6ad;
+
+  /* Bouton plein — toujours violet saturé, sur fond sombre comme clair */
+  --btn-bg: #7a3fb0;
+  --btn-bg-hover: #9257c9;
+  --btn-fg: #ffffff;
+  --btn-sub: #e2d3f7;
+
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+
+  --max-w: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 2.75rem);
 }
 
 /* =========================================================================
-   Theme transitions — fluid color changes between modes
+   Transition de thème
    ========================================================================= */
 html.theme-transition,
 html.theme-transition body,
@@ -110,23 +129,10 @@ html {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 16px;
   line-height: 1.6;
-  font-weight: 400;
   overflow-x: hidden;
-}
-
-/* Topographic background pattern — utilise les variables de glow */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 15% 20%, var(--bg-glow-1) 0%, transparent 35%),
-    radial-gradient(circle at 85% 80%, var(--bg-glow-2) 0%, transparent 40%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 a {
@@ -141,28 +147,68 @@ img {
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 3px;
 }
 
 /* =========================================================================
-   Utilities
+   Utilitaires
    ========================================================================= */
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
   padding-inline: var(--gutter);
-  position: relative;
-  z-index: 1;
 }
 
-.mono {
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-  letter-spacing: -0.02em;
+/* Les ancres ne doivent pas passer sous le header collant */
+section[id] {
+  scroll-margin-top: 4.25rem;
+}
+
+/* Bloc sombre « terminal » avec sa grille de fond */
+.terminal-surface {
+  background-color: var(--term-bg);
+  color: var(--term-fg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Curseur clignotant */
+.caret {
+  color: var(--accent-bright);
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Commande shell affichée à côté d'un titre */
+.cmd {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--fg-faded);
+}
+
+.terminal-surface .cmd {
+  color: var(--term-faded);
 }
 
 /* =========================================================================
-   D — Progress bar
+   Barre de progression de scroll
    ========================================================================= */
 .scroll-progress {
   position: fixed;
@@ -170,23 +216,22 @@ img {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent-bright);
   z-index: 200;
   transform-origin: left center;
   transform: scaleX(0);
   transition: transform 0.1s linear;
-  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 /* =========================================================================
-   A — Reveal animation de base
+   Reveal au scroll
    ========================================================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(22px);
   transition:
-    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .reveal.in-view {
@@ -194,15 +239,12 @@ img {
   transform: translateY(0);
 }
 
-/* =========================================================================
-   A — Stagger reveal
-   ========================================================================= */
 .stagger > * {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   transition:
-    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .stagger.in-view > * {
@@ -214,52 +256,19 @@ img {
   transition-delay: 0.05s;
 }
 .stagger.in-view > *:nth-child(2) {
-  transition-delay: 0.13s;
+  transition-delay: 0.12s;
 }
 .stagger.in-view > *:nth-child(3) {
-  transition-delay: 0.21s;
+  transition-delay: 0.19s;
 }
 .stagger.in-view > *:nth-child(4) {
-  transition-delay: 0.29s;
+  transition-delay: 0.26s;
 }
 .stagger.in-view > *:nth-child(5) {
-  transition-delay: 0.37s;
+  transition-delay: 0.33s;
 }
 .stagger.in-view > *:nth-child(6) {
-  transition-delay: 0.45s;
-}
-.stagger.in-view > *:nth-child(7) {
-  transition-delay: 0.53s;
-}
-.stagger.in-view > *:nth-child(8) {
-  transition-delay: 0.61s;
-}
-
-/* =========================================================================
-   B — Parallaxe
-   ========================================================================= */
-.hero-parallax {
-  will-change: transform;
-  transform: translateY(calc(var(--scroll-offset, 0) * 1px));
-}
-
-/* =========================================================================
-   C — Section number qui glisse
-   ========================================================================= */
-.section-num {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(40px);
-  transition:
-    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.reveal.in-view .section-num,
-.stagger.in-view .section-num {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.1s;
+  transition-delay: 0.4s;
 }
 
 /* =========================================================================
@@ -267,12 +276,14 @@ img {
    ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .stagger > *,
-  .section-num,
-  .hero-parallax {
+  .stagger > * {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .caret {
+    animation: none;
   }
 
   .scroll-progress {

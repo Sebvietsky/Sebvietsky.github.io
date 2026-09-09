@@ -1,17 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Fond terracotta avec coins légèrement arrondis -->
-  <rect width="64" height="64" rx="10" fill="#d96332"/>
-
-  <!-- Initiales SF -->
-  <text
-    x="50%"
-    y="50%"
-    text-anchor="middle"
-    dominant-baseline="central"
-    font-family="'JetBrains Mono', ui-monospace, monospace"
-    font-size="28"
-    font-weight="700"
-    fill="#0d0c0a"
-    letter-spacing="-1"
-  >SF</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="6" fill="#7a3fb0"></rect>
+  <text x="3" y="24" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500" font-size="22" fill="#e2d3f7">{</text>
+  <text x="12" y="23" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700" font-size="17" fill="#ffffff">s</text>
+  <text x="21" y="24" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500" font-size="22" fill="#e2d3f7">}</text>
 </svg>

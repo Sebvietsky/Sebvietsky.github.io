@@ -1,104 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <!-- Glow terracotta en haut à gauche -->
-    <radialGradient id="glow1" cx="0.15" cy="0.2" r="0.5">
-      <stop offset="0%" stop-color="#d96332" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#d96332" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Glow secondaire en bas à droite -->
-    <radialGradient id="glow2" cx="0.85" cy="0.85" r="0.45">
-      <stop offset="0%" stop-color="#785032" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#785032" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Pattern de points discret -->
-    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#2a261e"/>
-    </pattern>
-  </defs>
-
-  <!-- Fond principal -->
-  <rect width="1200" height="630" fill="#0d0c0a"/>
-  <rect width="1200" height="630" fill="url(#dots)" opacity="0.5"/>
-  <rect width="1200" height="630" fill="url(#glow1)"/>
-  <rect width="1200" height="630" fill="url(#glow2)"/>
-
-  <!-- Mark SF en haut à gauche -->
-  <g transform="translate(80, 80) rotate(-4)">
-    <rect width="64" height="64" rx="8" fill="#d96332"/>
-    <text
-      x="32"
-      y="32"
-      text-anchor="middle"
-      dominant-baseline="central"
-      font-family="'JetBrains Mono', ui-monospace, monospace"
-      font-size="28"
-      font-weight="700"
-      fill="#0d0c0a"
-      letter-spacing="-1"
-    >SF</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="JetBrains Mono, Menlo, Consolas, monospace">
+  <rect width="1200" height="630" fill="#2a2633"/>
+  <g stroke="#ffffff" stroke-opacity="0.045" stroke-width="1">
+    <g id="v"><path d="M28 0V630M56 0V630M84 0V630M112 0V630M140 0V630M168 0V630M196 0V630M224 0V630M252 0V630M280 0V630M308 0V630M336 0V630M364 0V630M392 0V630M420 0V630M448 0V630M476 0V630M504 0V630M532 0V630M560 0V630M588 0V630M616 0V630M644 0V630M672 0V630M700 0V630M728 0V630M756 0V630M784 0V630M812 0V630M840 0V630M868 0V630M896 0V630M924 0V630M952 0V630M980 0V630M1008 0V630M1036 0V630M1064 0V630M1092 0V630M1120 0V630M1148 0V630M1176 0V630"/></g>
+    <path d="M0 28H1200M0 56H1200M0 84H1200M0 112H1200M0 140H1200M0 168H1200M0 196H1200M0 224H1200M0 252H1200M0 280H1200M0 308H1200M0 336H1200M0 364H1200M0 392H1200M0 420H1200M0 448H1200M0 476H1200M0 504H1200M0 532H1200M0 560H1200M0 588H1200M0 616H1200"/>
   </g>
 
-  <!-- Eyebrow / status -->
-  <text
-    x="80"
-    y="290"
-    font-family="'JetBrains Mono', ui-monospace, monospace"
-    font-size="20"
-    font-weight="500"
-    fill="#d96332"
-    letter-spacing="0.5"
-  >— Disponible pour un stage en juin 2026</text>
+  <!-- logo {sf} -->
+  <g transform="translate(88,86) scale(0.62)">
+    <text x="0" y="58" font-size="62" font-weight="500" fill="#c39cf0">{</text>
+    <text x="42" y="56" font-size="56" font-weight="700" letter-spacing="-2" fill="#f1eef7">sf</text>
+    <text x="112" y="58" font-size="62" font-weight="500" fill="#c39cf0">}</text>
+  </g>
+  <text x="188" y="122" font-size="22" font-weight="600" fill="#f1eef7">sebastien@fabie:~$</text>
 
-  <!-- Nom principal -->
-  <text
-    x="80"
-    y="380"
-    font-family="'Fraunces', Georgia, serif"
-    font-size="92"
-    font-weight="400"
-    fill="#f5f1e8"
-    letter-spacing="-2"
-  >Sébastien Fabié</text>
+  <text x="88" y="222" font-size="26" fill="#c39cf0">$<tspan fill="#c9c3d6" font-size="24"> whoami</tspan></text>
 
-  <!-- Tagline -->
-  <text
-    x="80"
-    y="450"
-    font-family="'Fraunces', Georgia, serif"
-    font-style="italic"
-    font-size="44"
-    font-weight="300"
-    fill="#a8a195"
-    letter-spacing="-1"
-  >Développeur fullstack JavaScript / TypeScript</text>
+  <text x="88" y="300" font-size="62" font-weight="700" letter-spacing="-2" fill="#f1eef7">Des sites et des API</text>
+  <text x="88" y="372" font-size="62" font-weight="700" letter-spacing="-2" fill="#f1eef7">solides, pensés</text>
+  <text x="88" y="444" font-size="62" font-weight="700" letter-spacing="-2" fill="#f1eef7">pour durer<tspan fill="#c39cf0">_</tspan></text>
 
-  <!-- Stack en bas -->
-  <text
-    x="80"
-    y="555"
-    font-family="'JetBrains Mono', ui-monospace, monospace"
-    font-size="18"
-    font-weight="500"
-    fill="#6b6557"
-    letter-spacing="1"
-  >Node.js  ·  Express  ·  NestJS  ·  Prisma  ·  PostgreSQL  ·  Docker</text>
+  <text x="88" y="506" font-size="24" fill="#c9c3d6">Sébastien Fabié — développeur web backend · Annecy</text>
 
-  <!-- URL en bas à droite -->
-  <text
-    x="1120"
-    y="555"
-    text-anchor="end"
-    font-family="'JetBrains Mono', ui-monospace, monospace"
-    font-size="18"
-    font-weight="500"
-    fill="#6b6557"
-    letter-spacing="0.5"
-  >sebvietsky.github.io</text>
+  <g transform="translate(88,548)">
+    <rect width="486" height="40" rx="4" fill="#2f4a38"/>
+    <text x="18" y="26" font-size="19" font-weight="600" fill="#8fe6ad">● Disponible — CDI ou missions freelance</text>
+  </g>
 
-  <!-- Petit accent décoratif : ligne d'horizon stylisée en bas -->
-  <g opacity="0.15" transform="translate(0, 605)">
-    <path d="M 0 25 L 180 5 L 320 18 L 480 0 L 620 14 L 780 3 L 940 16 L 1080 6 L 1200 12 L 1200 25 Z" fill="#d96332"/>
+  <g transform="translate(600,548)" font-size="19" font-weight="600" fill="#e2d3f7">
+    <rect x="0" y="0" width="128" height="40" rx="4" fill="#3a2a52"/><text x="18" y="26">Node.js</text>
+    <rect x="142" y="0" width="160" height="40" rx="4" fill="#3a2a52"/><text x="160" y="26">TypeScript</text>
+    <rect x="316" y="0" width="176" height="40" rx="4" fill="#3a2a52"/><text x="334" y="26">PostgreSQL</text>
   </g>
 </svg>
