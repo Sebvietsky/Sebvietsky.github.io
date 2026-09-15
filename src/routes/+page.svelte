@@ -21,8 +21,8 @@
   const projects: Project[] = [
     {
       name: "Margot Hamel",
-      domain: "margot-website-eta.vercel.app",
-      url: "https://margot-website-eta.vercel.app/",
+      domain: "margothamel.fr",
+      url: "https://margothamel.fr/",
       preview: "/preview-margot.jpg",
       alt: "Page d'accueil du site de Margot Hamel, coach d'escalade à Annecy.",
       pitch:
