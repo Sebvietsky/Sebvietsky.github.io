@@ -28,7 +28,7 @@
       pitch:
         "Site vitrine et réservation pour une coach d'escalade à Annecy : formules d'accompagnement, cours particuliers et sorties en extérieur.",
       points: [
-        "Next.js / React · déploiement continu sur Vercel",
+        "Next.js / React · déploiement continu sur Netlify",
         "Prise de rendez-vous intégrée · thème clair et sombre",
         "En-têtes de sécurité stricts (CSP, anti-framing)",
       ],
