@@ -36,7 +36,7 @@
     {
       name: "GamerChallenges",
       domain: "gamer-challenge-front-end.vercel.app",
-      url: "https://gamer-challenge-front-end.vercel.app/",
+      url: "https://gamer-challenge-frontend.vercel.app/",
       preview: "/preview-gamerchallenges.jpg",
       alt: "Page d'accueil de GamerChallenges, plateforme de défis de jeux vidéo.",
       pitch:
