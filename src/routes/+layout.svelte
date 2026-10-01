@@ -90,6 +90,7 @@
     <nav>
       <a href="#projets" class="nav-link">Projets</a>
       <a href="#parcours" class="nav-link">Parcours</a>
+      <a href="/cv-sebastien-fabie.pdf" class="nav-link" download>CV</a>
       <a href="#contact" class="nav-link accent">Contact</a>
 
       <button
@@ -229,7 +230,7 @@
     }
 
     nav {
-      gap: 1rem;
+      gap: 0.8rem;
       font-size: 0.75rem;
     }
   }

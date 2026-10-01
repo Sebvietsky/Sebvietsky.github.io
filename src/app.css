@@ -270,6 +270,9 @@ section[id] {
 .stagger.in-view > *:nth-child(6) {
   transition-delay: 0.4s;
 }
+.stagger.in-view > *:nth-child(7) {
+  transition-delay: 0.47s;
+}
 
 /* =========================================================================
    Reduced motion

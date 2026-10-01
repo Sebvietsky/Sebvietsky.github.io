@@ -1,11 +1,14 @@
 <script lang="ts">
+  // Logos : Simple Icons (CC0), colorés à la couleur officielle de chaque techno.
+  // `invertOnDark` : logo noir, à passer en blanc sur le thème sombre.
   const stack = [
-    "Node.js",
-    "TypeScript",
-    "PostgreSQL",
-    "Express / NestJS",
-    "Docker",
-    "React"
+    { name: "Node.js", logo: "/icons/nodedotjs.svg", invertOnDark: false },
+    { name: "TypeScript", logo: "/icons/typescript.svg", invertOnDark: false },
+    { name: "PostgreSQL", logo: "/icons/postgresql.svg", invertOnDark: false },
+    { name: "Express", logo: "/icons/express.svg", invertOnDark: true },
+    { name: "NestJS", logo: "/icons/nestjs.svg", invertOnDark: false },
+    { name: "Docker", logo: "/icons/docker.svg", invertOnDark: false },
+    { name: "React", logo: "/icons/react.svg", invertOnDark: false },
   ];
 
   type Project = {
@@ -89,61 +92,68 @@
 <section id="top" class="hero terminal-surface">
   <div class="container hero-inner">
     <div class="gutter-lines" aria-hidden="true">
-      {#each Array(20) as _, i}
+      {#each Array(80) as _, i}
         <span>{i + 1}</span>
       {/each}
     </div>
 
     <div class="hero-content">
-      <div class="whoami">
-        <p class="prompt"><span class="dollar">$</span> whoami</p>
-        <h1 class="identity">Sébastien Fabié - développeur web fullstack orienté backend, à Annecy</h1>
-        <p>
-          <span class="badge-available"
-            >● Disponible - CDI ou missions freelance · Annecy / à distance</span
+      <div class="hero-main">
+        <div class="whoami">
+          <h1 class="identity">Sébastien Fabié - développeur web fullstack orienté backend, à Annecy</h1>
+          <p>
+            <span class="badge-available"
+              >● Disponible - CDI ou missions freelance · Annecy / à distance</span
+            >
+          </p>
+        </div>
+
+        <p class="slogan">
+          Des sites et des API<br />solides, pensés<br />pour durer et grandir<span
+            class="caret">_</span
           >
         </p>
-      </div>
 
-      <p class="slogan">
-        Des sites et des API<br />solides, pensés<br />pour durer et grandir<span
-          class="caret">_</span
-        >
-      </p>
-
-      <p class="lede">
-        Je conçois le moteur de vos applications : bases de données,
-        authentification, connexions entre services. Fiable, sécurisé,
-        documenté.
-      </p>
-
-      <div class="stack">
-        <span class="label">MA STACK</span>
-        <div class="chips">
-          {#each stack as tech}
-            <span class="chip">{tech}</span>
-          {/each}
+        <div class="actions">
+          <a href="#projets" class="btn btn-solid">
+            <span class="btn-main">Voir mes projets →</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span class="btn-main">Me contacter</span>
+          </a>
         </div>
       </div>
 
-      <div class="actions">
-        <a href="#projets" class="btn btn-solid">
-          <span class="btn-main">Voir mes projets →</span>
-          <span class="btn-sub">$ ls ./projets</span>
-        </a>
-        <a href="/cv-sebastien-fabie.pdf" class="btn btn-ghost" download>
-          <span class="btn-main">Télécharger mon CV</span>
-          <span class="btn-sub">$ curl cv.pdf</span>
-        </a>
-        <a href="#contact" class="btn btn-ghost">
-          <span class="btn-main">Me contacter</span>
-          <span class="btn-sub">$ mail sebastien</span>
-        </a>
+      <div class="engine">
+        <div class="engine-lead">
+          <p class="engine-title">Je conçois le moteur de vos applications</p>
+          <p class="engine-quality">Fiable, sécurisé, documenté.</p>
+        </div>
+        <ul class="engine-list">
+          <li><span class="engine-num">01</span>Bases de données</li>
+          <li><span class="engine-num">02</span>Authentification</li>
+          <li><span class="engine-num">03</span>Connexions entre services</li>
+        </ul>
       </div>
 
-      <p class="note">
-        # J'apprends en continu et peux étendre ma stack pour répondre à vos besoins.
-      </p>
+      <a href="#projets" class="scroll-cue">
+        <span class="scroll-cue-icon">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5v14" /><path d="m6 13 6 6 6-6" />
+          </svg>
+        </span>
+        <span>{projects.length} projets en ligne à découvrir</span>
+      </a>
     </div>
   </div>
 </section>
@@ -197,6 +207,36 @@
         </article>
       {/each}
     </div>
+  </div>
+</section>
+
+<!-- ============================ STACK ============================ -->
+<section id="stack" class="section bordered">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Ma stack</h2>
+      <span class="cmd">$ cat ./stack</span>
+    </div>
+
+    <ul class="chips stagger">
+      {#each stack as tech}
+        <!-- Le <li> porte l'apparition en cascade, le <span> le survol :
+             sinon le délai de cascade retarde aussi le hover -->
+        <li>
+          <span class="chip">
+            <img
+              src={tech.logo}
+              alt=""
+              width="20"
+              height="20"
+              loading="lazy"
+              class:invert-on-dark={tech.invertOnDark}
+            />
+            {tech.name}
+          </span>
+        </li>
+      {/each}
+    </ul>
   </div>
 </section>
 
@@ -310,13 +350,19 @@
   }
 
   /* ---------- Hero ---------- */
+  /* Plein écran : hauteur de la fenêtre moins le header collant */
   .hero-inner {
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr);
+    min-height: calc(100vh - 3.875rem);
+    min-height: calc(100svh - 3.875rem);
     padding-block: 3.5rem 3.75rem;
   }
 
+  /* contain: size — les numéros remplissent la hauteur du hero sans l'étirer */
   .gutter-lines {
+    contain: size;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
@@ -331,19 +377,22 @@
     padding-left: 2.125rem;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 2.5rem;
+  }
+
+  /* Bloc principal centré ; la phrase d'intention reste calée en bas */
+  .hero-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.75rem;
   }
 
   .whoami {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    font-size: 0.845rem;
-    line-height: 1.75;
-  }
-
-  .dollar {
-    color: var(--accent-bright);
   }
 
   .identity {
@@ -362,52 +411,150 @@
   }
 
   .slogan {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     line-height: 1.15;
     font-weight: 700;
     letter-spacing: -0.03em;
     max-width: 860px;
   }
 
-  .lede {
-    max-width: 600px;
+  /* ---------- Bas du hero : phrase d'intention structurée ---------- */
+  .engine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--term-border);
+  }
+
+  .engine-lead {
+    flex: 1.5 1 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .engine-title {
     font-size: 0.9375rem;
-    line-height: 1.7;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .engine-quality {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--ok-fg);
+  }
+
+  .engine-list {
+    flex: 3 1 480px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+  }
+
+  .engine-list li {
+    flex: 1 1 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
     color: var(--term-muted);
   }
 
-  .stack {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  .label {
-    font-size: 0.6875rem;
+  .engine-num {
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
-    color: var(--term-faded);
+    color: var(--accent-bright);
   }
 
+  /* ---------- Invitation à descendre ---------- */
+  .scroll-cue {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--term-muted);
+    transition: color 0.15s ease;
+  }
+
+  .scroll-cue:hover {
+    color: var(--term-fg);
+  }
+
+  .scroll-cue-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--term-ghost-border);
+    border-radius: 50%;
+    color: var(--accent-bright);
+    transition: border-color 0.15s ease;
+  }
+
+  .scroll-cue:hover .scroll-cue-icon {
+    border-color: var(--accent-bright);
+  }
+
+  .scroll-cue svg {
+    animation: cue-bounce 1.6s ease-in-out infinite;
+  }
+
+  @keyframes cue-bounce {
+    0%,
+    100% {
+      transform: translateY(-3px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-cue svg {
+      animation: none;
+    }
+  }
+
+  /* ---------- Stack ---------- */
   .chips {
+    margin-top: 1.625rem;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .chip {
-    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    background: #3a2a52;
-    color: #e2d3f7;
-    padding: 0.375rem 0.75rem;
-    border-radius: 4px;
+    background: var(--bg-elev);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    padding: 0.625rem 1rem;
+    border-radius: 6px;
+    transition: border-color 0.08s ease;
   }
 
-  .note {
-    font-size: 0.75rem;
-    line-height: 1.6;
-    color: var(--term-faded);
+  .chip:hover {
+    border-color: var(--accent);
+  }
+
+  .chip img {
+    width: 20px;
+    height: 20px;
+  }
+
+  :global([data-theme="dark"]) .chip img.invert-on-dark {
+    filter: invert(1);
   }
 
   /* ---------- Boutons ---------- */
